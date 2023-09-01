@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>COVID 19 Prediction</title>
+    <meta charset="UTF-8">
+    <title>Rendering Dynamic Images Using Flask</title>
+    <style type="text/css">
+       body{
+       margin: 0;
+       padding: 0;
+       width: 100%;
+       height: 100%;
+       background-color: white;
+       }
+
+       h1{
+
+        color: white;
+	    background-color: rgba(0, 0, 0, .8);
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+        margin: 0;
+       }
+
+       h2{
+
+        color: orangered;
+        margin-top: 2%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0;
+    
+
+        }
+
+        h3{
+
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 22px;
+        }
+
+       
+
+        p{
+
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+        color: white;
+        font-weight: bolder;
+        font-size: 16px;
+        background-color:orange;
+        color: white;
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        }
+
+       form{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        padding: 4%;
+        margin-top:0;
+        margin-left: 35%;
+        background-color: orangered;
+        font-family: 'Times New Roman', Times, serif;
+        
+        font: 18px;
+        width: 22%;
+        height: 12%;
+        border-radius: 7px;
+        
+
+       }
+
+       .display{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        margin-left: 41%;
+        margin-top: 1%;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        font: 18px;
+        width: 20%;
+        height: 20%;
+        
+        
+       }
+
+       .inpt{
+
+        
+        background-color:white;
+        color: orangered;
+        font-weight: bolder;
+        padding: 4%;
+        padding-left: 11%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        border-radius: 5%;
+        width: 80%;
+       }
+
+       .btn{
+        margin-left: 37%;
+        margin-top: 5%;
+        margin-bottom: 2%;
+        background-color: white;
+        color: orangered;
+        font-weight: bolder;
+        padding: 10px;
+        border-radius: 7px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        border: none;
+       }
+       .btn:hover{
+
+        background-color:  rgb(85, 199, 249);
+        color: white;
+
+       }
+
+       .play_video{
+         width: 80%;
+         height: 30%;
+  
+    
+        
+       }
+       .hero{
+
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+        margin: 0;
+        padding: 0;
+
+        
+       }
+        
+
+      
+    </style>
+</head>
+<body>
+
+    <h1>COVID-19 Prediction using Chest X-ray and CT Scan</h1>
+    
+
+    <div class="hero">
+    
+        <video autoplay loop muted plays-inline class="play_video" >
+            <source src= "{{ url_for('static', filename='video4.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <h2>UPLOAD YOUR IMAGE FOR PREDICTION</h2>
+
+    <form action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="POST">
+        <input name="img" type="file" class="inpt"/> <br>
+        <input type="submit" class="btn"/>
+    </form>
+
+
+
+<h4>{{print}}</h4>
+   
+    
+</body>
+</html>
